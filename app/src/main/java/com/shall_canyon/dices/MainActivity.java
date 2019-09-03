@@ -9,11 +9,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 
 /**
  * @author ShallCanyon
- * @version 1.01
+ * @version 1.02
  */
 
 public class MainActivity extends AppCompatActivity {
@@ -22,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     boolean isFabOpen = false;
     //define maximum randomized data
     int MAX = 100;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,22 +48,15 @@ public class MainActivity extends AppCompatActivity {
         final FloatingActionButton d6 = findViewById(R.id.bt_d6);
         final FloatingActionButton d60 = findViewById(R.id.bt_d60);
         final FloatingActionButton d100 = findViewById(R.id.bt_d100);
-
+        fab.bringToFront();
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Snackbar.make(view,"own action",Snackbar.LENGTH_LONG)
-                //        .setAction("Action",null).show();
                 if (isFabOpen) {
-                    isFabOpen = false;
-                    d6.hide();
-                    d60.hide();
-                    d100.hide();
+                    closeFabMenu(d6, d60, d100);
+
                 } else {
-                    isFabOpen = true;
-                    d6.show();
-                    d60.show();
-                    d100.show();
+                    openFabMenu(d6, d60, d100);
                 }
             }
         });
@@ -74,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
                 MAX = 6;
                 tx_disp.setText(String.valueOf(6));
                 Toast.makeText(MainActivity.this, "D6", Toast.LENGTH_SHORT).show();
+                closeFabMenu(d6, d60, d100);
             }
         });
         d60.setOnClickListener(new View.OnClickListener() {
@@ -82,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
                 MAX = 60;
                 tx_disp.setText(String.valueOf(60));
                 Toast.makeText(MainActivity.this, "D60", Toast.LENGTH_SHORT).show();
+                closeFabMenu(d6, d60, d100);
             }
         });
         d100.setOnClickListener(new View.OnClickListener() {
@@ -90,8 +85,26 @@ public class MainActivity extends AppCompatActivity {
                 MAX = 100;
                 tx_disp.setText(String.valueOf(100));
                 Toast.makeText(MainActivity.this, "D100", Toast.LENGTH_SHORT).show();
+                closeFabMenu(d6, d60, d100);
             }
         });
 
+    }
+
+    private void closeFabMenu(FloatingActionButton... x) {
+        isFabOpen = false;
+        for (int i = 0; i < x.length; i++) {
+            x[i].animate().translationY(0);
+            x[i].hide();
+        }
+    }
+
+    private void openFabMenu(FloatingActionButton... x) {
+        isFabOpen = true;
+        for (int i = 0; i < x.length; i++)
+            x[i].show();
+        x[0].animate().translationY(-getResources().getDimension(R.dimen.standard_short));
+        x[1].animate().translationY(-getResources().getDimension(R.dimen.standard_medium));
+        x[2].animate().translationY(-getResources().getDimension(R.dimen.standard_long));
     }
 }
