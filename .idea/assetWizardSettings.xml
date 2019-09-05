@@ -35,7 +35,7 @@
                                           <PersistentState>
                                             <option name="values">
                                               <map>
-                                                <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/action/ic_touch_app_black_24dp.xml" />
+                                                <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/content/ic_create_black_24dp.xml" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -71,7 +71,7 @@
                                             <option name="values">
                                               <map>
                                                 <entry key="fontFamily" value="Haettenschweiler" />
-                                                <entry key="text" value="100" />
+                                                <entry key="text" value="" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -81,8 +81,7 @@
                                   </option>
                                   <option name="values">
                                     <map>
-                                      <entry key="assetType" value="TEXT" />
-                                      <entry key="outputName" value="ic_action_d100" />
+                                      <entry key="outputName" value="ic_action_diy" />
                                       <entry key="theme" value="CUSTOM" />
                                       <entry key="themeColor" value="000000" />
                                     </map>

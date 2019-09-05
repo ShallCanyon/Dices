@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,37 +8,28 @@
     android:padding="10dp"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/Text_Disp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:elevation="2dp"
-        android:text="100"
-        android:textSize="200sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.25" />
+
+    <include layout="@layout/activity_content" />
 
     <Button
         android:id="@+id/bt_roll"
-        android:layout_width="119dp"
-        android:layout_height="72dp"
-        android:background="@drawable/shadow"
-        android:elevation="2dp"
+        android:layout_width="163dp"
+        android:layout_height="100dp"
+        android:background="@color/ic_launcher_background"
+        android:elevation="5dp"
         android:text="ROLL"
         android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Text_Disp" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.75" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/bt_fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:elevation="2dp"
+        android:elevation="5dp"
         android:focusable="auto"
         android:focusableInTouchMode="false"
         android:isScrollContainer="false"
@@ -46,90 +38,96 @@
         app:fabSize="normal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.974"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.986"
+        app:maxImageSize="36dp"
+        app:srcCompat="@drawable/ic_action_fab" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/bt_d6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="5dp"
+        android:focusable="auto"
+        android:focusableInTouchMode="false"
+        android:isScrollContainer="false"
+        android:visibility="invisible"
+        app:borderWidth="0dp"
+        app:fabCustomSize="48dp"
+        app:fabSize="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.953"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.976"
-        app:maxImageSize="36dp"
-        app:srcCompat="@drawable/ic_action_fab" />
+        app:maxImageSize="24dp"
+        app:srcCompat="@drawable/ic_action_d6" />
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="50dp"
-        android:layout_height="180dp"
-        android:orientation="vertical"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/bt_d60"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="5dp"
+        android:focusable="auto"
+        android:focusableInTouchMode="false"
+        android:isScrollContainer="false"
+        android:visibility="invisible"
+        app:borderWidth="0dp"
+        app:fabCustomSize="48dp"
+        app:fabSize="normal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.941"
+        app:layout_constraintHorizontal_bias="0.953"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.852">
+        app:layout_constraintVertical_bias="0.976"
+        app:maxImageSize="24dp"
+        app:srcCompat="@drawable/ic_action_d60" />
 
-        <LinearLayout
-            android:layout_width="48dp"
-            android:layout_height="60dp"
-            android:baselineAligned="false"
-            android:orientation="horizontal">
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/bt_d100"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="5dp"
+        android:focusable="auto"
+        android:focusableInTouchMode="false"
+        android:isScrollContainer="false"
+        android:visibility="invisible"
+        app:borderWidth="0dp"
+        app:fabCustomSize="48dp"
+        app:fabSize="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.953"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.976"
+        app:maxImageSize="24dp"
+        app:srcCompat="@drawable/ic_action_d100" />
 
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/bt_d6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:elevation="2dp"
-                android:focusable="auto"
-                android:focusableInTouchMode="false"
-                android:isScrollContainer="false"
-                android:visibility="invisible"
-                app:borderWidth="0dp"
-                app:fabCustomSize="48dp"
-                app:fabSize="normal"
-                app:maxImageSize="24dp"
-                app:srcCompat="@drawable/ic_action_d6" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="48dp"
-            android:layout_height="60dp"
-            android:orientation="horizontal">
-
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/bt_d60"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:elevation="2dp"
-                android:focusable="auto"
-                android:focusableInTouchMode="false"
-                android:isScrollContainer="false"
-                android:visibility="invisible"
-                app:borderWidth="0dp"
-                app:fabCustomSize="48dp"
-                app:fabSize="normal"
-                app:maxImageSize="24dp"
-                app:srcCompat="@drawable/ic_action_d60" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="48dp"
-            android:layout_height="60dp"
-            android:orientation="horizontal">
-
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/bt_d100"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:elevation="2dp"
-                android:focusable="auto"
-                android:focusableInTouchMode="false"
-                android:isScrollContainer="false"
-                android:visibility="invisible"
-                app:borderWidth="0dp"
-                app:fabCustomSize="48dp"
-                app:fabSize="normal"
-                app:maxImageSize="24dp"
-                app:srcCompat="@drawable/ic_action_d100" />
-        </LinearLayout>
-
-    </LinearLayout>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/bt_diy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="5dp"
+        android:focusable="auto"
+        android:focusableInTouchMode="false"
+        android:isScrollContainer="false"
+        android:visibility="invisible"
+        app:borderWidth="0dp"
+        app:fabCustomSize="48dp"
+        app:fabSize="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.953"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.976"
+        app:maxImageSize="24dp"
+        app:srcCompat="@drawable/ic_action_diy" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
