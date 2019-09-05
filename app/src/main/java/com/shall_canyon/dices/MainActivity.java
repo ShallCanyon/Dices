@@ -13,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
 
 /**
  * @author ShallCanyon
@@ -170,10 +171,10 @@ public class MainActivity extends AppCompatActivity {
         //Create EditText inside layout
         final EditText editUpper = new EditText(this);
         editUpper.setHint("最大值");
-        //editUpper.setText(String.valueOf(upper));
+        editUpper.setText(String.valueOf(upper));
         final EditText editLower = new EditText(this);
         editLower.setHint("最小值");
-        //editLower.setText(String.valueOf(lower));
+        editLower.setText(String.valueOf(lower));
         layout.addView(editUpper);
         layout.addView(editLower);
         builder.setView(layout);
@@ -181,13 +182,15 @@ public class MainActivity extends AppCompatActivity {
         builder.setPositiveButton("完成", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                //String up = editUpper.getText().toString().trim();
-                int up = Integer.parseInt(editUpper.getText().toString().trim());
-                int down = Integer.parseInt(editLower.getText().toString().trim());
-                //String down = editLower.getText().toString().trim();
-                //int result = Integer.parseInt(temp);
-                changeTextView(up, down);
-                Toast.makeText(MainActivity.this, "D" + getRange(), Toast.LENGTH_SHORT).show();
+                if (editLower.getText().toString().trim().length() > 0 &&
+                        editUpper.getText().toString().trim().length() > 0) {
+                    int up = Integer.parseInt(editUpper.getText().toString().trim());
+                    int down = Integer.parseInt(editLower.getText().toString().trim());
+                    changeTextView(up, down);
+                    Toast.makeText(MainActivity.this, "D" + getRange(), Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(MainActivity.this, "输入框内容不能为空", Toast.LENGTH_SHORT).show();
+                }
             }
         });
         builder.setNegativeButton("退出", new DialogInterface.OnClickListener() {
